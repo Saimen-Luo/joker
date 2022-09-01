@@ -61,13 +61,8 @@ void run(int argc, char *argv[])
                 // TODO ignore kill-like signal
                 close(io[1]);
 
-                char *s1 = (char *) malloc(strlen(TMP) + 22*100 + 7*100);
-                sprintf(s1, "echo %d > %s/.joker/lastid", pid, TMP);
-                system(s1);
-                free(s1);
-
-                char *s = (char *) malloc(strlen(TMP) + 9*100 + 7*100+ strlen(argv[1]));
-                sprintf(s, "%s/.joker/%d.%s", TMP, pid, basename(argv[1]));
+                char *s = (char *) malloc(strlen(TMP) + 9*100 + 7*100);
+                sprintf(s, "%s/.joker/log", TMP);
                 FILE *f = fopen(s, "w");
                 if(!f) {
                     perror("can not open log file");
