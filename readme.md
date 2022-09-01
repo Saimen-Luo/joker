@@ -42,7 +42,7 @@ $ make
 
 ### Where are log files?
 
-All log files are stored in $HOME/.joker based on PID
+All log files are stored in /tmp/.joker based on PID
 
 ### Why
 

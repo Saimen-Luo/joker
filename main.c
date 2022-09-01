@@ -41,9 +41,8 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    struct passwd *pw = getpwuid(getuid());
-    char *s = (char *) malloc(strlen(pw->pw_dir) + 7*100);
-    sprintf(s, "%s/.joker", pw->pw_dir);
+    char *s = (char *) malloc(strlen(TMP) + 7*100);
+    sprintf(s, "%s/.joker", TMP);
     struct stat st = {0};
     if (stat(s, &st) == -1) {
         mkdir(s, 0700);
@@ -66,15 +65,15 @@ int main(int argc, char *argv[])
         return i;
     }
     if(argc == 3 && strcmp(argv[1], "log") == 0){
-        char *s = (char *) malloc(4*100+strlen(pw->pw_dir) + 8*100 + strlen(argv[2]));
-        sprintf(s, "cat %s/.joker/%s.*", pw->pw_dir, argv[2]);
+        char *s = (char *) malloc(4*100+strlen(TMP) + 8*100 + strlen(argv[2]));
+        sprintf(s, "cat %s/.joker/%s.*", TMP, argv[2]);
         int i = system(s);
         free(s);
         return i;
     }
     if(argc == 2 && strcmp(argv[1], "last") == 0){
-        char *s = (char *) malloc(strlen(pw->pw_dir) + 18*100);
-        sprintf(s, "cat %s/.joker/lastid", pw->pw_dir);
+        char *s = (char *) malloc(strlen(TMP) + 18*100);
+        sprintf(s, "cat %s/.joker/lastid", TMP);
         int i = system(s);
         free(s);
         return i;
