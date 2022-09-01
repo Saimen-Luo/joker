@@ -37,14 +37,6 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    char *s = (char *) malloc(strlen(TMP) + 7*100);
-    sprintf(s, "%s/.joker", TMP);
-    struct stat st = {0};
-    if (stat(s, &st) == -1) {
-        mkdir(s, 0700);
-    }
-    free(s);
-
     run(argc, argv);
     return 0;
 }

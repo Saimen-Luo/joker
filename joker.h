@@ -15,8 +15,6 @@
 #ifndef __JOKER_H
 #define __JOKER_H
 
-#define TMP "/tmp"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

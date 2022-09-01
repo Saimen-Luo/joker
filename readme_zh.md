@@ -38,7 +38,7 @@ $ make
 
 ### 日志文件在哪里?
 
-所有的进程日志文件基于PID命名被存储在/tmp/.joker下
+/tmp/joker.log
 
 ### 为什么
 

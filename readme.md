@@ -38,7 +38,7 @@ $ make
 
 ### Where are log files?
 
-All log files are stored in /tmp/.joker based on PID
+/tmp/joker.log
 
 ### Why
 

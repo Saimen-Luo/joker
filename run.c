@@ -61,8 +61,8 @@ void run(int argc, char *argv[])
                 // TODO ignore kill-like signal
                 close(io[1]);
 
-                char *s = (char *) malloc(strlen(TMP) + 9*100 + 7*100);
-                sprintf(s, "%s/.joker/log", TMP);
+                char *s = (char *) malloc(9*100 + 7*100);
+                sprintf(s, "/tmp/joker.log");
                 FILE *f = fopen(s, "a+");
                 if(!f) {
                     perror("can not open log file");
