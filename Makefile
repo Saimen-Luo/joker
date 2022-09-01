@@ -3,10 +3,10 @@ OBJS = $(SRC:.c=.o)
 CFLAGS = -Ilib -Wall
 
 joker: $(OBJS)
-	gcc $(CFLAGS) -o joker $(OBJS) $(LDFLAGS)
+	$(CC) $(CFLAGS) -o joker $(OBJS) $(LDFLAGS)
 
 %.o: %.c
-	gcc $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm -f $(OBJS)
