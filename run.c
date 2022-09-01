@@ -63,7 +63,7 @@ void run(int argc, char *argv[])
 
                 char *s = (char *) malloc(strlen(TMP) + 9*100 + 7*100);
                 sprintf(s, "%s/.joker/log", TMP);
-                FILE *f = fopen(s, "w");
+                FILE *f = fopen(s, "a+");
                 if(!f) {
                     perror("can not open log file");
                     free(s);
