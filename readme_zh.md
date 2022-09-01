@@ -21,6 +21,7 @@ $ nami install joker
 
 ```
 $ make
+$ make LDFLAGS=-static -s # statically link and strip
 ```
 
 ### 使用

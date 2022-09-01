@@ -21,6 +21,7 @@ or build from Source
 
 ```
 $ make
+$ make LDFLAGS=-static -s # statically link and strip
 ```
 
 ### Usage
