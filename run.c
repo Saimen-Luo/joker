@@ -71,13 +71,19 @@ void run(int argc, char *argv[])
                     return;
                 }
 
+                // http://t.zoukankan.com/Harley-Quinn-p-7481593.html Linux的文件描述符fd与文件指针FILE*互相转换
+                FILE *fp = fdopen(io[0], "r");
+                char *baseName = basename(argv[1]);
+
                 for(;;){
                     char s[1024];
-                    int n = read(io[0], s, 1024-1);
-                    if(n <= 0){
+                    char *n = fgets(s, 1024-1, fp);
+                    if(n == NULL){
                         break;
                     }
-                    s[n] = 0;
+                    // s[n] = 0;
+                    fputs(baseName, f);
+                    fputs(": ", f);
                     int i = fputs(s, f);
                     if (i<0){
                         perror("append log failed");
