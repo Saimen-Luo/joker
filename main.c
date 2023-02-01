@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         return 0;
     }
     if(argc == 2 && (strcmp(argv[1], "version") == 0 || strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "-v") == 0)){
-        printf("v20220902\n");
+        printf("v20230201\n");
         return 0;
     }
 
