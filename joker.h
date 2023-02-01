@@ -28,6 +28,7 @@
 #endif
 #include <signal.h>
 #include <pwd.h>
+#include <time.h>
 
 void help();
 void run(int argc, char *argv[]);

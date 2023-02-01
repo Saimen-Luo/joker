@@ -82,6 +82,16 @@ void run(int argc, char *argv[])
                         break;
                     }
                     // s[n] = 0;
+                    // -->
+                    // https://blog.csdn.net/WU9797/article/details/76922323 <C语言>打印（输）出系统时间-----time相关函数
+                    time_t t;
+                    struct tm *p;
+                    time(&t);
+                    p = localtime(&t); // 取得当地时间
+                    char *stamp = (char *) malloc(9*100 + 7*100);
+                    sprintf(stamp, "[%d/%02d/%02d %02d:%02d:%02d] ", (1900+p->tm_year), (1+p->tm_mon), p->tm_mday, p->tm_hour, p->tm_min, p->tm_sec);
+                    fputs(stamp, f);
+                    // <--
                     fputs(baseName, f);
                     fputs(": ", f);
                     int i = fputs(s, f);
